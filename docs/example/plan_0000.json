@@ -1,0 +1,518 @@
+{
+ "results": [
+  {
+   "rule_id": "R01",
+   "kind": "min_area",
+   "text": "Every bedroom shall have a floor area of not less than 9 m\u00b2.",
+   "passed": true,
+   "failures": [],
+   "failing_rooms": []
+  },
+  {
+   "rule_id": "R02",
+   "kind": "min_width",
+   "text": "No bedroom shall be narrower than 2.4 m.",
+   "passed": true,
+   "failures": [],
+   "failing_rooms": []
+  },
+  {
+   "rule_id": "R03",
+   "kind": "adjacent",
+   "text": "The kitchen shall share a wall with the living room.",
+   "passed": true,
+   "failures": [],
+   "failing_rooms": []
+  },
+  {
+   "rule_id": "R04",
+   "kind": "no_door_between",
+   "text": "A bathroom shall not open directly into a kitchen.",
+   "passed": false,
+   "failures": [
+    "BATH (R4) opens directly into KITCHEN (R3)"
+   ],
+   "failing_rooms": [
+    "R4"
+   ]
+  },
+  {
+   "rule_id": "R05",
+   "kind": "every_room_has_door",
+   "text": "Every room shall be accessible through at least one door.",
+   "passed": true,
+   "failures": [],
+   "failing_rooms": []
+  },
+  {
+   "rule_id": "R06",
+   "kind": "door_between",
+   "text": "Every bedroom shall open directly onto the hall.",
+   "passed": true,
+   "failures": [],
+   "failing_rooms": []
+  },
+  {
+   "rule_id": "R07",
+   "kind": "requires_room",
+   "text": "The dwelling shall contain at least one bathroom.",
+   "passed": true,
+   "failures": [],
+   "failing_rooms": []
+  },
+  {
+   "rule_id": "R08",
+   "kind": "max_egress",
+   "text": "From any point inside any room, the walking distance to an exit door shall not exceed 15 m.",
+   "passed": false,
+   "failures": [
+    "HALL (R2) is 16.2 m from an exit via D7 \u2192 D8 (max 15.0 m)",
+    "BEDROOM 1 (R5) is 19.1 m from an exit via D3 \u2192 D7 \u2192 D8 (max 15.0 m)",
+    "BEDROOM 4 (R8) is 19.5 m from an exit via D6 \u2192 D7 \u2192 D8 (max 15.0 m)"
+   ],
+   "failing_rooms": [
+    "R2",
+    "R5",
+    "R8"
+   ]
+  }
+ ],
+ "geometry": {
+  "rooms": [
+   {
+    "id": "R1",
+    "label": "LIVING ROOM",
+    "type": "living",
+    "area_m2": 42.0,
+    "min_width_m": 4.0,
+    "doors": [
+     "D7",
+     "D8",
+     "D9"
+    ],
+    "egress_m": 8.02
+   },
+   {
+    "id": "R2",
+    "label": "HALL",
+    "type": "corridor",
+    "area_m2": 14.5,
+    "min_width_m": 1.21,
+    "doors": [
+     "D1",
+     "D2",
+     "D3",
+     "D4",
+     "D5",
+     "D6",
+     "D7"
+    ],
+    "egress_m": 16.21
+   },
+   {
+    "id": "R3",
+    "label": "KITCHEN",
+    "type": "kitchen",
+    "area_m2": 17.57,
+    "min_width_m": 3.45,
+    "doors": [
+     "D1",
+     "D9",
+     "D10"
+    ],
+    "egress_m": 11.2
+   },
+   {
+    "id": "R4",
+    "label": "BATH",
+    "type": "bathroom",
+    "area_m2": 15.78,
+    "min_width_m": 3.1,
+    "doors": [
+     "D2",
+     "D10"
+    ],
+    "egress_m": 13.21
+   },
+   {
+    "id": "R5",
+    "label": "BEDROOM 1",
+    "type": "bedroom",
+    "area_m2": 27.75,
+    "min_width_m": 5.09,
+    "doors": [
+     "D3"
+    ],
+    "egress_m": 19.09
+   },
+   {
+    "id": "R6",
+    "label": "BEDROOM 2",
+    "type": "bedroom",
+    "area_m2": 11.94,
+    "min_width_m": 2.84,
+    "doors": [
+     "D4"
+    ],
+    "egress_m": 9.97
+   },
+   {
+    "id": "R7",
+    "label": "BEDROOM 3",
+    "type": "bedroom",
+    "area_m2": 14.31,
+    "min_width_m": 3.41,
+    "doors": [
+     "D5"
+    ],
+    "egress_m": 13.3
+   },
+   {
+    "id": "R8",
+    "label": "BEDROOM 4",
+    "type": "bedroom",
+    "area_m2": 24.15,
+    "min_width_m": 4.2,
+    "doors": [
+     "D6"
+    ],
+    "egress_m": 19.46
+   }
+  ],
+  "adjacency": [
+   [
+    "R1",
+    "R2"
+   ],
+   [
+    "R1",
+    "R3"
+   ],
+   [
+    "R1",
+    "R6"
+   ],
+   [
+    "R2",
+    "R3"
+   ],
+   [
+    "R2",
+    "R4"
+   ],
+   [
+    "R2",
+    "R5"
+   ],
+   [
+    "R2",
+    "R6"
+   ],
+   [
+    "R2",
+    "R7"
+   ],
+   [
+    "R2",
+    "R8"
+   ],
+   [
+    "R3",
+    "R4"
+   ],
+   [
+    "R4",
+    "R5"
+   ],
+   [
+    "R6",
+    "R7"
+   ],
+   [
+    "R7",
+    "R8"
+   ]
+  ],
+  "exits": [
+   "D8"
+  ]
+ },
+ "plan": {
+  "rooms": [
+   {
+    "id": "R1",
+    "label": "LIVING ROOM",
+    "type": "living",
+    "polygon": [
+     [
+      192.0,
+      192.0
+     ],
+     [
+      672.0,
+      192.0
+     ],
+     [
+      672.0,
+      1452.0
+     ],
+     [
+      192.0,
+      1452.0
+     ]
+    ]
+   },
+   {
+    "id": "R2",
+    "label": "HALL",
+    "type": "corridor",
+    "polygon": [
+     [
+      672.0,
+      803.0
+     ],
+     [
+      2112.0,
+      803.0
+     ],
+     [
+      2112.0,
+      948.0
+     ],
+     [
+      672.0,
+      948.0
+     ]
+    ]
+   },
+   {
+    "id": "R3",
+    "label": "KITCHEN",
+    "type": "kitchen",
+    "polygon": [
+     [
+      672.0,
+      192.0
+     ],
+     [
+      1086.0,
+      192.0
+     ],
+     [
+      1086.0,
+      803.0
+     ],
+     [
+      672.0,
+      803.0
+     ]
+    ]
+   },
+   {
+    "id": "R4",
+    "label": "BATH",
+    "type": "bathroom",
+    "polygon": [
+     [
+      1086.0,
+      192.0
+     ],
+     [
+      1458.0,
+      192.0
+     ],
+     [
+      1458.0,
+      803.0
+     ],
+     [
+      1086.0,
+      803.0
+     ]
+    ]
+   },
+   {
+    "id": "R5",
+    "label": "BEDROOM 1",
+    "type": "bedroom",
+    "polygon": [
+     [
+      1458.0,
+      192.0
+     ],
+     [
+      2112.0,
+      192.0
+     ],
+     [
+      2112.0,
+      803.0
+     ],
+     [
+      1458.0,
+      803.0
+     ]
+    ]
+   },
+   {
+    "id": "R6",
+    "label": "BEDROOM 2",
+    "type": "bedroom",
+    "polygon": [
+     [
+      672.0,
+      948.0
+     ],
+     [
+      1013.0,
+      948.0
+     ],
+     [
+      1013.0,
+      1452.0
+     ],
+     [
+      672.0,
+      1452.0
+     ]
+    ]
+   },
+   {
+    "id": "R7",
+    "label": "BEDROOM 3",
+    "type": "bedroom",
+    "polygon": [
+     [
+      1013.0,
+      948.0
+     ],
+     [
+      1422.0,
+      948.0
+     ],
+     [
+      1422.0,
+      1452.0
+     ],
+     [
+      1013.0,
+      1452.0
+     ]
+    ]
+   },
+   {
+    "id": "R8",
+    "label": "BEDROOM 4",
+    "type": "bedroom",
+    "polygon": [
+     [
+      1422.0,
+      948.0
+     ],
+     [
+      2112.0,
+      948.0
+     ],
+     [
+      2112.0,
+      1452.0
+     ],
+     [
+      1422.0,
+      1452.0
+     ]
+    ]
+   }
+  ],
+  "doors": [
+   {
+    "id": "D1",
+    "position": [
+     927.0,
+     803.0
+    ],
+    "width_px": 108.0
+   },
+   {
+    "id": "D2",
+    "position": [
+     1346.0,
+     803.0
+    ],
+    "width_px": 108.0
+   },
+   {
+    "id": "D3",
+    "position": [
+     1743.0,
+     803.0
+    ],
+    "width_px": 108.0
+   },
+   {
+    "id": "D4",
+    "position": [
+     798.0,
+     948.0
+    ],
+    "width_px": 108.0
+   },
+   {
+    "id": "D5",
+    "position": [
+     1215.0,
+     948.0
+    ],
+    "width_px": 108.0
+   },
+   {
+    "id": "D6",
+    "position": [
+     1844.0,
+     948.0
+    ],
+    "width_px": 108.0
+   },
+   {
+    "id": "D7",
+    "position": [
+     672.0,
+     875.0
+    ],
+    "width_px": 108.0
+   },
+   {
+    "id": "D8",
+    "position": [
+     192.0,
+     1026.0
+    ],
+    "width_px": 108.0
+   },
+   {
+    "id": "D9",
+    "position": [
+     672.0,
+     415.0
+    ],
+    "width_px": 108.0
+   },
+   {
+    "id": "D10",
+    "position": [
+     1086.0,
+     536.0
+    ],
+    "width_px": 108.0
+   }
+  ]
+ },
+ "issues": [],
+ "log": [
+  "rules: 8 loaded from file",
+  "extract #1: 8 rooms, 10 doors (simulated)",
+  "snap: {'vertical': 7, 'horizontal': 5} wall lines, mean vertex shift 20.1 px",
+  "validate: 0 errors, 0 warnings",
+  "check: 6 passed, 2 failed"
+ ]
+}

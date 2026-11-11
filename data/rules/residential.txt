@@ -1,0 +1,10 @@
+Residential apartment requirements (example specification)
+
+1. Every bedroom shall have a floor area of not less than 9 m².
+2. No bedroom shall be narrower than 2.4 m.
+3. The kitchen shall share a wall with the living room.
+4. A bathroom shall not open directly into a kitchen.
+5. Every room shall be accessible through at least one door.
+6. Every bedroom shall open directly onto the hall.
+7. The dwelling shall contain at least one bathroom.
+8. From any point inside any room, the walking distance to an exit door shall not exceed 15 m.

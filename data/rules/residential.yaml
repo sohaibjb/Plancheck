@@ -1,0 +1,11 @@
+# Hand-written structured version of residential.txt.
+# Used offline (no LLM) and as the reference answer when evaluating the rule parser.
+rules:
+  - {id: R01, kind: min_area, room_type: bedroom, min_m2: 9, text: "Every bedroom shall have a floor area of not less than 9 m²."}
+  - {id: R02, kind: min_width, room_type: bedroom, min_m: 2.4, text: "No bedroom shall be narrower than 2.4 m."}
+  - {id: R03, kind: adjacent, a: kitchen, b: living, text: "The kitchen shall share a wall with the living room."}
+  - {id: R04, kind: no_door_between, a: bathroom, b: kitchen, text: "A bathroom shall not open directly into a kitchen."}
+  - {id: R05, kind: every_room_has_door, text: "Every room shall be accessible through at least one door."}
+  - {id: R06, kind: door_between, a: bedroom, b: corridor, text: "Every bedroom shall open directly onto the hall."}
+  - {id: R07, kind: requires_room, room_type: bathroom, min_count: 1, text: "The dwelling shall contain at least one bathroom."}
+  - {id: R08, kind: max_egress, room_type: any, max_m: 15, text: "From any point inside any room, the walking distance to an exit door shall not exceed 15 m."}
